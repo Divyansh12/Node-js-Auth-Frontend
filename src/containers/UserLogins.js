@@ -23,7 +23,7 @@ const loading = {
 };
 
 const title = {
-  pageTitle: 'User Profile Screen',
+  pageTitle: 'Manage Login Activity',
 };
 
 class User_Logins extends Component {
