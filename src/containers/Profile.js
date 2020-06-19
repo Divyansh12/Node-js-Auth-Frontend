@@ -121,9 +121,32 @@ class Profile extends Component {
     }
   };
 
-  logout = (e) => {
+  logout = async(e) => {
+    const accessString = localStorage.getItem('JWT');
+    if (accessString === null) {
+      this.setState({
+        isLoading: false,
+        error: true,
+      });
+    }
+
     e.preventDefault();
-    localStorage.removeItem('JWT');
+    try {
+      const response = await axios.delete('https://node-js-auth.herokuapp.com/api/v1/logout', {
+        headers: { Authorization: `JWT ${accessString}` },
+      });
+      console.log(response.data);
+      localStorage.removeItem('JWT');
+      this.setState({
+        error: true,
+      });
+    } catch (error) {
+      console.error(error.response.data);
+      this.setState({
+        error: true,
+      });
+    }
+    
   };
 
   render() {
