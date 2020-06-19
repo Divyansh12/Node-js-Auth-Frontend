@@ -46,7 +46,7 @@ class ForgotPassword extends Component {
     } else {
       try {
         const response = await axios.post(
-          'http://localhost:4500/api/v1/forgotPassword',
+          'https://node-js-auth.herokuapp.com/api/v1/forgotPassword',
           {
             email,
           },

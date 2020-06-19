@@ -55,7 +55,7 @@ class UpdatePassword extends Component {
         },
       } = this.props;
       try {
-        const response = await axios.get('http://localhost:4500/api/v1/findUser', {
+        const response = await axios.get('https://node-js-auth.herokuapp.com/api/v1/findUser', {
           params: {
             username,
           },
@@ -95,7 +95,7 @@ class UpdatePassword extends Component {
       const { username, password } = this.state;
       try {
         const response = await axios.put(
-          'http://localhost:4500/api/v1/updatePassword',
+          'https://node-js-auth.herokuapp.com/api/v1/updatePassword',
           {
             username,
             password,

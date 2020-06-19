@@ -55,7 +55,7 @@ class Register extends Component {
     } else {
       try {
         const response = await axios.post(
-          'http://localhost:4500/api/v1/registerUser',
+          'https://node-js-auth.herokuapp.com/api/v1/registerUser',
           {
             first_name,
             last_name,

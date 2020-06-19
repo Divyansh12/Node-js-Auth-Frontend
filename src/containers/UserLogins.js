@@ -53,7 +53,7 @@ class User_Logins extends Component {
       });
     } else {
       try {
-        const response = await axios.get('http://localhost:4500/api/v1/user/logins/show', {
+        const response = await axios.get('https://node-js-auth.herokuapp.com/api/v1/user/logins/show', {
           headers: { Authorization: `Bearer ${accessString}` },
         });
         console.log(response.data);
@@ -82,7 +82,7 @@ class User_Logins extends Component {
     }
     console.log(id);
     try {
-      const response = await axios.get(`http://localhost:4500/api/v1/user/logins/delete/${id}`, {
+      const response = await axios.get(`https://node-js-auth.herokuapp.com/api/v1/user/logins/delete/${id}`, {
         
         headers: { Authorization: `Bearer ${accessString}` },
       });
@@ -112,7 +112,7 @@ LogoutAll = async (e) => {
 
     e.preventDefault();
     try {
-      const response = await axios.get('http://localhost:4500/api/v1/user/logins/deletes/all', {
+      const response = await axios.get('https://node-js-auth.herokuapp.com/api/v1/user/logins/deletes/all', {
         
         headers: { Authorization: `Bearer ${accessString}` },
       });
@@ -140,7 +140,7 @@ LogoutAllNotCurrent = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.get('http://localhost:4500/api/v1/user/logins/delete/all/not-current', {
+      const response = await axios.get('https://node-js-auth.herokuapp.com/api/v1/user/logins/delete/all/not-current', {
         
         headers: { Authorization: `Bearer ${accessString}` },
       });

@@ -44,7 +44,7 @@ export default class ResetPassword extends Component {
       },
     } = this.props;
     try {
-      const response = await axios.get('http://localhost:4500/api/v1/reset', {
+      const response = await axios.get('https://node-js-auth.herokuapp.com/api/v1/reset', {
         params: {
           resetPasswordToken: token,
         },
@@ -84,7 +84,7 @@ export default class ResetPassword extends Component {
     } = this.props;
     try {
       const response = await axios.put(
-        'http://localhost:4500/api/v1/updatePasswordViaEmail',
+        'https://node-js-auth.herokuapp.com/api/v1/updatePasswordViaEmail',
         {
           username,
           password,

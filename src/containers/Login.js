@@ -49,7 +49,7 @@ class Login extends Component {
       });
     } else {
       try {
-        const response = await axios.post('http://localhost:4500/api/v1/loginUser', {
+        const response = await axios.post('https://node-js-auth.herokuapp.com/api/v1/loginUser', {
           username,
           password,
         });

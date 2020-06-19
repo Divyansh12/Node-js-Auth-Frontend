@@ -58,7 +58,7 @@ class UpdateProfile extends Component {
       },
     } = this.props;
     try {
-      const response = await axios.get('http://localhost:4500/api/v1/findUser', {
+      const response = await axios.get('https://node-js-auth.herokuapp.com/api/v1/findUser', {
         params: {
           username,
         },
@@ -103,7 +103,7 @@ class UpdateProfile extends Component {
     e.preventDefault();
     try {
       const response = await axios.put(
-        'http://localhost:4500/api/v1/updateUser',
+        'https://node-js-auth.herokuapp.com/api/v1/updateUser',
         {
           first_name,
           last_name,

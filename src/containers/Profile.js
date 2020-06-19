@@ -62,7 +62,7 @@ class Profile extends Component {
       });
     } else {
       try {
-        const response = await axios.get('http://localhost:4500/api/v1/findUser', {
+        const response = await axios.get('https://node-js-auth.herokuapp.com/api/v1/findUser', {
           params: {
             username,
           },
@@ -102,7 +102,7 @@ class Profile extends Component {
 
     e.preventDefault();
     try {
-      const response = await axios.delete('http://localhost:4500/api/v1/deleteUser', {
+      const response = await axios.delete('https://node-js-auth.herokuapp.com/api/v1/deleteUser', {
         params: {
           username,
         },
