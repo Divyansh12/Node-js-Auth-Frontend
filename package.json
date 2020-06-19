@@ -1,13 +1,26 @@
 {
   "name": "node-js-auth-frontend",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Divyansh12/Node-js-Auth-Frontend.git"
+  },
+  "author": "Divyansh Agarwal (divag.bvp@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Divyansh12/Node-js-Auth-Frontend/issues"
+  },
   "dependencies": {
+    "@material-ui/core": "^4.10.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.19.2",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1"
   },
   "scripts": {
