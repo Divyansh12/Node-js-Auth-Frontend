@@ -2,6 +2,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: rgb(140,134,86);
-  background: radial-gradient(circle, rgba(200,134,130,0.41220238095238093) 22%, rgba(219,180,80,0.5550595238095238) 55%, rgba(230,230,255,0.28335084033613445) 100%);
+  /* background: rgb(240,134,86);
+  background: radial-gradient(circle, rgba(200,134,130,0.41220238095238093) 22%, rgba(219,180,80,0.5550595238095238) 55%, rgba(230,230,255,0.28335084033613445) 100%); */
+  /* background: #50C9C3;  /* fallback for old browsers */
+  /* background: -webkit-linear-gradient(to left, #96DEDA, #50C9C3);  Chrome 10-25, Safari 5.1-6 */
+  /* background: linear-gradient(to left, #96DEDA, #50C9C3); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+  */
+
+
 }
