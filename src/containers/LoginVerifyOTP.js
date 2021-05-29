@@ -109,7 +109,7 @@ class LoginVerifyOTP extends Component {
               label="OTP"
               value={otp}
               onChange={this.handleChange('otp')}
-              placeholder="Username"
+              placeholder="OTP"
             />
             
             <SubmitButtons buttonStyle={loginButton} buttonText="Login" />
