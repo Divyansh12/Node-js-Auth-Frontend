@@ -9,12 +9,14 @@ import ForgotPassword from './containers/ForgotPassword';
 import ResetPassword from './containers/ResetPassword';
 import UpdatePassword from './containers/UpdatePassword';
 import UserLogins from './containers/UserLogins';
+import LoginVerifyOTP from './containers/LoginVerifyOTP';
 
 const Routes = () => (
   <div>
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/login" component={Login} />
+      <Route exact path="/login/verify/otp" component={LoginVerifyOTP} />
       <Route exact path="/register" component={Register} />
       <Route exact path="/reset/:token" component={ResetPassword} />
       <Route exact path="/forgotPassword" component={ForgotPassword} />

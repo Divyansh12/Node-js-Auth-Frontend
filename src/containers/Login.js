@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
 import TextField from '@material-ui/core/TextField';
 import axios from 'axios';
+// https://node-js-auth.herokuapp.com
 
 import {
   LinkButtons,
@@ -26,7 +26,7 @@ class Login extends Component {
     this.state = {
       username: '',
       password: '',
-      loggedIn: false,
+      otpReceived: false,
       showError: false,
       showNullError: false,
     };
@@ -45,7 +45,7 @@ class Login extends Component {
       this.setState({
         showError: false,
         showNullError: true,
-        loggedIn: false,
+        otpReceived: false,
       });
     } else {
       try {
@@ -53,17 +53,27 @@ class Login extends Component {
           username,
           password,
         });
-        localStorage.setItem('JWT', response.data.token);
+
+        console.log(response)
+
         this.setState({
-          loggedIn: true,
+          verification_key: response.data.Details,
+          otpReceived: true,
           showError: false,
           showNullError: false,
+        });
+        
+        this.props.history.push( {pathname: "/login/verify/otp",
+        state: { username: this.state.username,
+          verification_key: response.data.Details
+         }
+        
         });
       } catch (error) {
         console.error(error.response.data);
         if (
-          error.response.data === 'bad username'
-          || error.response.data === 'passwords do not match'
+          error.response.data === 'Username or password is wrong'
+          || error.response.data === 'Password is incorrect'
         ) {
           this.setState({
             showError: true,
@@ -104,7 +114,7 @@ class Login extends Component {
               placeholder="Password"
               type="password"
             />
-            <SubmitButtons buttonStyle={loginButton} buttonText="Login" />
+             <SubmitButtons buttonStyle={loginButton} buttonText="Get OTP" />
           </form>
           {showNullError && (
             <div>
@@ -133,7 +143,7 @@ class Login extends Component {
         </div>
       );
     }
-    return <Redirect to={`/userProfile/${username}`} />;
+    
   }
 }
 
